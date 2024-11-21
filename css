@@ -1,0 +1,85 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+/* Container Styles */
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+/* Section Styles */
+.section {
+    position: relative;
+    padding: 20px;
+    margin: 10px;
+    background-color: lightgray;
+    border: 1px solid black;
+    flex-basis: 32%; /* Default width for desktop view */
+    box-sizing: border-box;
+}
+
+.section-title {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    font-size: 1.25em;
+}
+
+.section-content p {
+    margin-top: 30px;
+    font-size: 1em;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Desktop (992px and above) */
+@media screen and (min-width: 992px) {
+    .section {
+        flex-basis: 32%;
+    }
+}
+
+/* Tablet (768px to 991px) */
+@media screen and (max-width: 991px) and (min-width: 768px) {
+    .section {
+        flex-basis: 48%;
+    }
+
+    #sushi {
+        flex-basis: 100%; /* Sushi section takes full row */
+    }
+}
+
+/* Mobile (767px and below) */
+@media screen and (max-width: 767px) {
+    .section {
+        flex-basis: 100%; /* All sections take full row */
+    }
+
+    .section-title {
+        top: 5px;
+        right: 5px;
+    }
+}
